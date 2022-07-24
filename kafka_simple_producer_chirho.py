@@ -14,9 +14,9 @@ def run_kafka_simple_producer_chirho(args_chirho: argparse.ArgumentParser):
     for line_chirho in sys.stdin:
         producer_chirho.send(
             args_chirho.topic_chirho,
-            line_chirho.encode('utf-8'))
+            line_chirho.strip().encode('utf-8'))
         producer_chirho.flush()
-        
+
 
 def argparse_chirho():
     parser = argparse.ArgumentParser()
