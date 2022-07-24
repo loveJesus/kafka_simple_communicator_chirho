@@ -10,7 +10,7 @@ def run_kafka_simple_listener_chirho(args_chirho: argparse.ArgumentParser):
     # Use a breakpoint in the code line below to debug your script.
     consumer_chirho = kafka.KafkaConsumer(
         args_chirho.topic_chirho,
-        bootstrap_servers=args_chirho.server_chirho,
+        bootstrap_servers=args_chirho.servers_chirho,
         group_id=args_chirho.group_id_chirho,
         client_id=args_chirho.client_id_chirho)
 
@@ -22,7 +22,7 @@ def run_kafka_simple_listener_chirho(args_chirho: argparse.ArgumentParser):
 def argparse_chirho():
     parser = argparse.ArgumentParser()
     parser.add_argument('--topic_chirho', type=str, default='tmp1_chirho')
-    parser.add_argument('--server_chirho', type=str, help='server_ip:port', default='localhost:9092')
+    parser.add_argument('--servers_chirho', type=str, help='server_ip:port,server_ip:port', default='localhost:9092')
     parser.add_argument('--group_id_chirho', type=str, default=None)
     parser.add_argument('--client_id_chirho', type=str, default=None)
 
