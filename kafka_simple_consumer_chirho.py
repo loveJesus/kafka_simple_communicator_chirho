@@ -17,6 +17,7 @@ def run_kafka_simple_listener_chirho(args_chirho: argparse.ArgumentParser):
     for message_chirho in consumer_chirho:
         str_value_chirho = message_chirho.value.decode('utf-8')
         print(str_value_chirho)
+        sys.stdout.flush()
 
 
 def argparse_chirho():
